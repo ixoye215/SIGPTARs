@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGPTARs Morelos</title>
+    <!-- ARCHIVO DE BOOTSTRAP -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- FUENTE MONTSERRAT -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- FUENTE PARA ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <!-- ARCHIVOS PERSONALIZADOS -->
+    <link rel="stylesheet" href="css/estilosp.css">
+
+    <!-- ICONO EN LA BARRA DE DIRECCIONES -->
+    <!-- <link rel="icon" type="image/png" href="img/LogosPrincipales.png" /> -->
+
+    <!-- SCRIPT PARA REALIZAR LAS GRAFICAS -->
+    <script src="js/Chart.js"></script>
+
+</head>
+<body>
+    <!-- CABECERA CON LOS LOGOS PRINCIPALES --> 
+     
+    <header>
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark ">
+            <!-- LOGO GOBIERNO DE MEXICO -->
+            <img src="img/gobMexicologo.png" width="130" alt="LogoGobiernoMexico">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-md-flex justify-content-md-end justify-content-sm-start" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btn-intro">SIGPTARs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btn-estado">Estatal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btn-municipio">Municipios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btn-estadog">Datos PTARs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btn-redagua">Red de Calidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="btn-sistema">Sistema</a>
+                    </li>
+                </ul>
+            </div>
+          </nav>
+            <!-- LOGO DE FONDO Y DEMAS LOGOS DE IMTA Y MEDIO AMBIENTE -->
+            <div class="aguila">
+                
+                <!-- LOGOS DE MEDIO AMBIENTE Y DEL IMTA -->
+                <div class="logos">
+                    <img class="logoimta" src="img/LogosPrincipales.png" alt="Logos Princiaples">
+                    <h1 class="text-center titulo">Instituto Mexicano de Tecnología del Agua</h1>
+                </div>
+                <!-- LOGO DE AGUILA DE FONDO -->
+                <img class="img1" src="img/aguilafondo.png" alt="AguilaFondo">
+            </div>
+    </header>
+      
+
+    <!-- CONTENEDOR -->
+    <section class="container">
+
+        <!-- TITULO Y DESCRIPCIÓN -->
+        <div class="introduccion d-flex flex-column" id="intro">
+            <!-- TITULO DEL SISTEMA -->
+            <h1 class="encabezado1 text-center">SIGPTARs: Saneamiento de Agua Residual en el Estado de Morelos</h1>
+
+            <!-- PRIMER PARRAFO -->
+            <p class="parrafo1 text-justify">
+                El crecimiento demográfico y socio económico del estado de Morelos vuelve prioritarias las actividades de suministro de agua potable, alcantarillado y tratamiento de las aguas residuales en la agenda municipal y estatal, con énfasis en intensificar la reutilización del agua residual tratada, fomentando su intercambio por agua de primer uso cuando esto sea posible.
+            </p>
+        </div>
+
+        <!-- PARTE DE EVOLUCION DE PTARS ACTIVAS EN MORELOS (2005-2018) -->
+        <div class="ptarsEstado d-flex flex-column mt-3">
+            <h1 class="encabezado2 p-0 mb-0" id="estado">Evolución de PTARs activas en Morelos (2005-2018)</h1>
+
+            <div class="imagenes d-flex flex-column flex-md-row p-0 mt-0">
+                <img class="evolucion" src="img/EvolucionPtarsActivasMor.jpg" alt="EvolucionPTARs">
+                <div class="grafica1">
+                    <div class="titulograficaEstado">
+                        <p>PTARs en el Estado de Morelos 2005-2018</p>
+                    </div>
+                    <div class="graficasEstatales">
+                        <canvas id="myChartE" width="300" height="300" class="d-block d-md-none"></canvas>
+                        <canvas id="myChartE2" width="550" height="250" class="d-none d-md-block"></canvas>
+                    </div>
+                    <div class="btnDatos">
+                        <button class="btn btn-success btn-block d-block d-sm-none btn-sm mt-2">Descargar Datos</button>
+                        <button class="btn btn-success d-none d-sm-block btn-sm">Descargar Datos</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- PARTE EVOLUCION DE PTARS ACTIVAS POR MUNIPIO (2005-2018) -->
+        <div class="ptarsMunicipio d-flex flex-column mt-5">
+            <h1 class="encabezado2 p-0 mb-0" id="Municipio"> Evolución de PTARs activas por municipios (2005-2018)</h1>
+            
+            <div class="d-flex flex-column flex-md-row justify-content-end">
+                <form id="formulario" class="formulario">
+                
+                    <div class="form-group">
+                            <label class="p-0 mb-0" for="municipio">Municipio: </label>
+                            <select name="municipio" id="municipio" class="form-control">
+                                <option value="Amacuzac">Amacuzac</option>
+                                <option value="Atlatlahucan">Atlatlahucan</option>
+                                <option value="Axochiapan">Axochiapan</option>
+                                <option value="Ayala">Ayala</option>
+                                <option value="Coatlán del Río">Coatlán del Río</option>
+                                <option value="Cuautla">Cuautla</option>
+                                <option value="Cuernavaca">Cuernavaca</option>
+                                <option value="Emiliano Zapata">Emiliano Zapata</option>
+                                <option value="Huitzilac">Huitzilac</option>
+                                <option value="Jantetelco">Jantetelco</option>
+                                <option value="Jiutepec">Jiutepec</option>
+                                <option value="Jojutla">Jojutla</option>
+                                <option value="Jonacatepec">Jonacatepec</option>
+                                <option value="Mazatepec">Mazatepec</option>
+                                <option value="Miacatlán">Miacatlán</option>
+                                <option value="Ocuituco">Ocuituco</option>
+                                <option value="Puente de Ixtla">Puente de Ixtla</option>
+                                <option value="Temixco">Temixco</option>
+                                <option value="Tepalcingo">Tepalcingo</option>
+                                <option value="Tepoztlán">Tepoztlán</option>
+                                <option value="Tetecala">Tetecala</option>
+                                <option value="Tetela del Volcán">Tetela del Volcán</option>
+                                <option value="Tlalnepantla">Tlalnepantla</option>
+                                <option value="Tlatizapán de Zapata">Tlatizapan de Zapata</option>
+                                <option value="Tlaquiltenango">Tlaquiltenango</option>
+                                <option value="Tlayacapan">Tlayacapan</option>
+                                <option value="Totolapan">Totolapan</option>
+                                <option value="Xochitepec">Xochitepec</option>
+                                <option value="Yautepec">Yautepec</option>
+                                <option value="Yecapixtla">Yecapixtla</option>
+                                <option value="Zacatepec">Zacatepec</option>
+                                <option value="Zacualpan">Zacualpan de Amilpas</option>
+                                <option value="Temoac">Temoac</option>
+                            </select>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-sm ml-2 mt-md-3">Mostrar Gráfica</button>
+                </form>
+    
+                <p id="tituloGraficaM" class="text-center mt-md-5">Núm. De PTARs activas en Amacuzac <span class="baseSina">(base SINA)</span></p>
+            </div>
+            
+        
+            <div class="grafica">
+                <canvas id="myChartM" width="300" height="300" class="d-block d-md-none"></canvas>
+                <canvas id="myChartM2" width="300" height="100" class="d-none d-md-block"></canvas>
+                <div class="btnDatos d-flex justify-content-end">
+                    <button class="btn btn-success btn-block d-block d-md-none btn-sm">Descargar Datos</button>
+                    <button class="btn btn-success d-none d-md-block btn-sm">Descargar Datos</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- ESTADO QUE GUARDA LA PTARS -->
+        <div class="estadoPtars mt-5">
+            <div class="row">
+                <!-- FORMULARIO -->
+                <h1 class="encabezado2 col-12 p-0 mb-0" id="estadog">Red de Plantas de Tratamiento de Aguas Residuales en Morelos</h1>
+                <div class="formulario2 col-12 mb-0 p-0">
+                    <form action="" method="post">
+                        <div class="form-row d-flex justify-content-between p-0">
+                            <div class="form-group col-12 col-md-6 d-flex justify-content-start p-0">
+                                <input type="text" name="buscar" id="myInput" class="form-control" placeholder="Buscar PTAR" onkeyup="myFunction()">
+                            </div>
+                            <div class="form-group col-12 col-md-6">
+                                <div class="botonesGrandes d-none d-md-block">
+                                    <button id="btnTodas" class="btn btn-primary btn-sm">Todas</button>
+                                    <button id="btnActivas" class="btn btn-primary btn-sm">Activas</button>
+                                    <button id="btnNoperando" class="btn btn-primary btn-sm">No operando</button>
+                                    <button id="btnVisita" class="btn btn-primary btn-sm">Con visita de campo</button>
+                                </div>
+
+                                <div class="botonesChicos d-block d-md-none">
+                                    <button id="btnTodas" class="btn btn-primary btn-block btn-sm">Todas</button>
+                                    <button id="btnActivas" class="btn btn-primary btn-block btn-sm">Activas</button>
+                                    <button id="btnNoperando" class="btn btn-primary btn-block btn-sm">No operando</button>
+                                    <button id="btnVisita" class="btn btn-primary btn-block btn-sm">Con visita de campo</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+                <!-- TABLA DE LAS PTARS -->
+                <div class="tableFixHead col-12 col-md-6 mt-0 p-0">
+                    <table class="table table-bordered table-striped table-hover table-sm" id="myTable">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">PDF</th>
+                            <th scope="col">ClaveLoc</th>
+                            <th scope="col">Nombre de la PTAR</th>
+                            <th scope="col">Municipio</th>
+                            <th scope="col">Estado</th>
+                          </tr>
+                        </thead>
+                        <tbody id="contenidot">
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Gachupina</td>
+                            <td>Jiutepec</td>
+                            <td>Jiutepec</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+
+                <div class="archivo col-12 col-md-6 mt-3 mt-md-0">
+                    <div class="pdf" id="pdf">
+                        <h1 class="text-center">Selecciona un archivo para visualizar el PDF</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RED DE CALIDAD DEL AGUA -->
+        <div class="redagua mt-5">
+            <div class="row">
+                <h1 class="encabezado2 col-12 mb-0 p-0" id="redAgua">Red de Calidad del Agua</h1>
+                <div class="cuadro col-12">
+                    <div class="redCalidad">
+                        <h1 class="text-center">Espacio pendiente</h1>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <!-- MAPA CON LAS PTARS -->
+        <div class="sistema mt-5">
+            <div class="tituloSistema">
+                <h1 class="text-center" id="Sistema">Sistema de Información Geográfica de Monitoreo del agua residual tratada en Morelos, nivel municipal</h1>
+
+                <h2 class="text-center">(SIGPTARs: Saneamiento de agua residual en el Estado de Morelos)</h2>
+                <div class="cuadro col-12">
+                    <div class="mapa">
+                        <h1 class="text-center">MAPA SIGPTARs</h1>
+                    </div>
+                </div>
+                <!-- <div id="mapa" >
+                    <iframe src="https://yolanda-sa.maps.arcgis.com/apps/webappviewer/index.html?id=ccc409fd4add4cd1822d6173a8cd1a71" width="100%" height="500px" style="border:1px solid black;">
+                    </iframe>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- FUENTES -->
+        <div class="fuentes mt-3">
+            <h2 id="Fuentes">Fuentes de información</h2>
+            <p class="text-justify">
+                MGM 2018, Marco geoestadistico municipal;
+                CENSO, 2010, Censo de Población y Vivienda 2010: Tabulados del Cuestionario Básico con fecha de elaboración 17/02/2011, Localidades y su población por municipio según tamaño de localidad;
+                CDI, 2010, Indicadores sociodemogáficos y económicos sobre la población indígena desagregada por municipio, 2010 de CDI;
+                CDI, 2015, Indicadores sociodemogáficos y económicos sobre la población indígena desagregada por municipio, 2015 de CDI;
+                TEIC, 2015, INEGI. Tabulados de la Encuesta Intercensal 2015;
+                CuboUsos, 2017, Cubo de población publicado en la Estadísticas del Agua en México. Ed. 2018;
+                IMPEFM, 2010, Índice de marginación por entidad federativa y municipio 2010;
+                CNGMD, 2015, Censo Nacional de Gobiernos Municipales y Delegacionales 2015. módulo 5.;
+                CNI, 2015, Población con acceso a los servicios de alcantarillado y saneamiento básico 2015;
+                IRS, 2015, Índice de rezago social 2000-2015 a nivel nacional, estatal y municipal.;
+                SINAb, Registro Público de Derechos de Agua (REPDA) / Volúmenes Inscritos (nacional).Fuente predominante para usos consuntivos por municipio 2017;
+                SINAc, Acuíferos. Disponibilidad de los acuíferos 2018;
+                SINAd, Distritos y unidades de riego (nacional). Distritos de riego 2016-2017;
+                Marco geoestadístico, INEGI, 2017;
+                Áreas geoestadísticas estatales, INEGI, 2017;
+                Áreas geoestadistico minicipales, INEGI, 2017;
+                Áreas geoestadistico básicas rurales, INEGI, 2017;
+                Localidades urbanas y rurales amanzanadas, INEGI, 2017;
+                Localidades puntuales rurales, INEGI, 2017;
+                Áreas geoestadísticas básicas urbanas, INEGI, 2017;
+                Polígonos de manzana, INEGI, 2017;
+                Frentes de manzana, INEGI, 2017;
+                Ejes de vialidad, INEGI, 2017;
+                Caserío disperso, INEGI, 2017;
+                Servicios de información complementaria de tipo área, INEGI, 2017;
+                Servicios de información complementaria de tipo puntual, INEGI, 2017;
+                Vias de comunicación, INEGI, 2011;
+                Plantas de tratamiendo de agua residual, SINA, 2019;
+                Rios Morelos, INEGI, 2010;
+                Basureros, SEIARN, 2017;
+                Cuerpos de agua, INEGI, 2010;
+                Asentamientos humanos, GOB.MX, 2019
+                Distritos de riego, SINA, 2017;
+                Unidades de riego, SINA, 2018;
+                Hospitales, INEGI DENUE, 2020;
+                Molino de arroz, INEGI DENUE, 2020;
+                Ingenios azucareros, INEGI DENUE, 2020;
+                Industrias textiles, INEGI DENUE, 2020;
+                Fabricación de autos, INEGI DENUE, 2020;
+                Escuelas, INEGI DENUE, 2020;
+                Embotelladoras, INEGI DENUE, 2020;
+                Cabeceras municipales, CONABIO, 2000;
+            </p>
+        </div>
+        
+    </section>
+
+    <!-- PIE DE PAGINA -->
+    <footer>
+        <div class="imggob">
+            <img src="img/gobMexicologo.png" style="width: 150px;" alt="GobiernoMexico">
+        </div>
+        <div class="aguila">
+            <img src="img/bannerfooter.PNG" alt="BannerLogo">
+        </div> 
+    </footer>
+
+
+    <!-- ARCHIVOS PARA DISEÑO -->
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- PARALLAX -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/parallax.js"></script>
+
+    <!-- MOSTRAR GRAFICAS MUNICIPALES -->
+    <script src="js/graficasEstatal.js"></script>
+    <script src="js/graficasMun.js"></script>
+
+    <!-- TABLA DE PTARS -->
+    <script src="js/tabla.js"></script>
+
+</body>
+</html>

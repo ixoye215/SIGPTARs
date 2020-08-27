@@ -1,0 +1,409 @@
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    z-index: 2;
+}
+
+/* LOGOS PRINCIAPLES Y TITULO */
+header .aguila{
+    display: block;
+    width: 100%;
+    height: 170px;
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* LOGO DEL AGUILA DE FONDO */
+header .aguila .img1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 200px;
+    transform: scaleX(-1);
+    opacity: .2;
+}
+
+/* DIV QUE CONTIENE LOS LOGOS DE SEMARNAT Y IMTA */
+.logos{
+    position: absolute;
+    width: 100%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid #000; */
+}
+
+/* Contiene los logos principales y el titulo */
+.logos .logoimta{
+    width: 40%;
+}
+
+.logos .titulo{
+    font-size: 27px;
+}
+
+/* LOGOS RESPONSIVO Y BARRA */
+@media screen and (max-width:700px){
+    .logos .logoimta{
+        width: 90%;
+    }
+
+}
+
+/* RESPONSIVO PARA CELULARES */
+@media screen and (max-width:500px){
+
+    .logos .logoimta{
+        width: 90%;
+    }
+
+    .logos .titulo{
+        font-size: 18px;
+    }
+}
+
+/* ========= INTRODUCCION ===========*/
+.introduccion .encabezado1{
+    margin: 10px 0;
+    padding: 0;
+    font-size: 27px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+}
+.introduccion .parrafo1{
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    font-size: 18px;
+}
+
+/* INTRODUCCION RESPONSIVO */
+@media screen and (max-width:500px){
+    .introduccion .encabezado1{
+        font-size: 18px;
+    }
+    .introduccion .parrafo1{
+        font-size: 18px;
+    }
+}
+
+/* ========================EVOLUCION DE PTARS ACTIVAS EN MORELOS (2005-2018) =============================*/
+.ptarsEstado .encabezado2{
+    font-size: 27px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0;
+}
+
+.ptarsEstado .evolucion{
+    width: 50%;
+    padding: 10px;
+}
+
+.ptarsEstado  .grafica1{
+    width: 50%;
+    padding: 10px;
+    position: relative;
+}
+
+.ptarsEstado .grafica1 .graficasEstatales{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+}
+
+.ptarsEstado .btnDatos{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 2;
+}
+
+.ptarsEstado .titulograficaEstado{
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    font-size: 18px;
+    z-index: 2;
+}
+
+/* RSPONSIVO */
+@media screen and (max-width:1024px){
+    .ptarsEstado .titulograficaEstado{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .ptarsEstado .titulograficaEstado{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .ptarsEstado .encabezado2{
+        font-size: 18px;
+    }
+    .ptarsEstado .evolucion{
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .ptarsEstado  .grafica1{
+        position: static;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .ptarsEstado .grafica1 .graficasEstatales{
+        position: static;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .ptarsEstado .btnDatos{
+        position: static;
+        z-index: 2;
+    }
+
+    .ptarsEstado .titulograficaEstado{
+        position: static;
+        width: 100%;
+        font-size: 18px;
+        text-align: center;
+        z-index: 2;
+    }
+    
+}
+
+/* ====================PTARS ACTIVAS POR MUNICIPIO ===================0*/
+.ptarsMunicipio .encabezado2{
+    font-size: 27px;
+    width: 100%;
+    padding: 0px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.ptarsMunicipio .formulario{
+    width: 40%;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+}
+
+.ptarsMunicipio #tituloGraficaM{
+    width: 60%;
+    font-size: 18px;
+    text-align: right;
+}
+
+.ptarsMunicipio .grafica{
+    width: 90%;
+    top: 0;
+    margin: auto;
+    position: relative;
+}
+
+.ptarsMunicipio .grafica .btnDatos{
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+
+.ptarsMunicipio .baseSina{
+    font-size: 12px;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width:500px){
+    .ptarsMunicipio .encabezado2{
+        font-size: 18px;
+    }
+    .ptarsMunicipio .formulario{
+        width: 100%;
+    }
+
+    .ptarsMunicipio #tituloGraficaM{
+        width: 100%;
+        text-align: center;
+    }
+
+    .ptarsMunicipio .grafica .btnDatos{
+        position: static;
+    }
+
+    canvas{
+        height: 300;
+    }
+}
+
+/* =================ESTADO QUE GUARDA EL PTAR =========================*/
+.estadoPtars{
+    width: 95%;
+    margin: auto;
+}
+
+.estadoPtars .encabezado2{
+    font-size: 27px;
+    text-shadow: 1px 1px 1px #000;
+    padding: 2px;
+}
+
+.estadoPtars .formulario2{
+    padding: 0px;   
+}
+
+.estadoPtars .botonesGrandes button{
+    margin-left: 10px;
+}
+
+.tableFixHead{ overflow-y: auto; height: 350px;}
+.tableFixHead thead th { position: sticky; top: 0; }
+
+.estadoPtars .pdf{
+    height: 350px;
+}
+.estadoPtars .pdf{
+    border: 1px solid #000;
+}
+
+.estadoPtars .pdf .vistapdf{
+    width: 100%;
+    height: 100%;
+}
+
+.estadoPtars table{
+    font-size: 11px;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width:1024px){
+    .estadoPtars .botonesGrandes button{
+        margin-left: 10px;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width:768px){
+    .estadoPtars .botonesGrandes button{
+        margin-left: 2px;
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:500px){
+    .estadoPtars .encabezado2{
+        font-size: 18px;
+        text-align: center;
+    }
+    .estadoPtars table{
+        font-size: 6px;
+    }
+
+}
+
+/*================ RED DE CALIDAD DE AGUA ===================*/
+.redagua .encabezado2{
+    font-size: 27px;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.redagua .redCalidad{
+    height: 300px;
+    border: 1px solid #000;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width:500px){
+    .redagua .encabezado2{
+        font-size: 18px;
+    }
+
+}
+
+/* MAPA SISTEMA DE INFORMACION GEOGRAFICA DE MONITOREO DEL AGUA RESIDUAL */
+.sistema h1,
+.sistema h2{
+    font-style: italic;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.sistema h1{
+    font-size: 20px;
+}
+
+.sistema h2{
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    text-shadow: 3px 3px 3px yellow;
+}
+
+.sistema .mapa{
+    height: 300px;
+    border: 1px solid #000;
+}
+@media screen and (max-width:500px){
+    .sistema h1{
+        font-size: 18px;
+    }
+
+    .sistema h2{
+        font-size: 18px;
+    }
+}
+
+/* FUENTES DE INFORMACION */
+
+.fuentes h2{
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #000;
+}
+.fuentes p{
+    font-size: 6px;
+}
+
+@media screen and (max-width:500px){
+    .fuentes h2{
+        font-size: 14px;
+    }
+
+    .fuentes p{
+        font-size: 6px;
+    }
+}
+
+/* ==================FOOTER========================= */
+footer{
+    background-color: #13322B;
+}
+
+footer .imggob img{
+    width: 300px;
+}
+
+footer .aguila{
+    width: 100%;
+}
+footer .aguila img{
+    width: 100%;
+}
