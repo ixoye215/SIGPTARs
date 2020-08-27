@@ -9,7 +9,7 @@ if(window.grafica==null){
 function entrada(){
     municipioGlobal = 'Amacuzac';
     $.ajax({
-    url: '../datos/PTARsActivasMunicipal.csv',
+    url: './datos/PTARsActivasMunicipal.csv',
     dataType: 'text',
     }).done(graficarMunicipio);
 }
