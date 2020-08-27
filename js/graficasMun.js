@@ -20,7 +20,7 @@ formulario.addEventListener('submit', function(e){
     municipioGlobal = municipio;
     tituloGrafica.innerHTML = 'Núm. De PTARS activas en '+municipioGlobal+'\n <span class="baseSina">(base SINA)</span>';
     $.ajax({
-    url: '../datos/PTARsActivasMunicipal.csv',
+    url: './datos/PTARsActivasMunicipal.csv',
     dataType: 'text',
     }).done(graficarMunicipio);
 });
